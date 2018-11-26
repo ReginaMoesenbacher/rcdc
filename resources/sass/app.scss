@@ -1,0 +1,167 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body{
+  color: #000000;
+  font-family: $font-family-serif;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  p{
+    font-family: $font-family-sans-serif;
+    font-size: 1em;
+  }
+}
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/********************************Nav****************************************/
+
+nav {
+  background: white;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 50px;
+  }
+
+  a {
+    font-size: 1.5em;
+    padding-right: 60px;
+    color: #281A24;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    //padding: 10px 15px;
+  }
+  a:hover{
+    color: #A6988D;
+    transform: rotate(5deg) scale(1.1);
+  }
+  a:hover:before, a:hover:after{
+    opacity: 1;
+    width: 10px;
+  }
+  a:before, a:after {
+    transition: all 0.3s ease;
+    opacity: 1;
+    border-top: 1px solid #A6988D;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: -1;
+    margin: auto;
+    width: 0px;
+  }
+
+  a:before {
+    top: 0px;
+    transform: rotate(120deg) translateY(-50%) translateX(-50%);
+  }
+
+  a:after {
+    top: 5px;
+    transform: rotate(-60deg) translateY(-50%) translateX(-50%);
+  }
+}
+
+/********************************landingpage****************************************/
+
+.background {
+  background-image: url("../images/bar.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+
+}
+
+//.background {
+//  position: fixed;
+//
+//  img {
+//    width: 100vw;
+//    height: 100vh;
+//  }
+//}
+
+h2{
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 5em;
+  top: 350px;
+  position: absolute;
+  color: white;
+}
+
+.info {
+  background: white;
+}
+
+
+
+
+
+
+
+/********************************Login&Register****************************************/
+.container_background {
+  font-family: $font-family-serif;
+  background-image: url("../images/loginbackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_table {
+  width: 100%;
+}
+
+.form_background {
+  background: #f8fafc80;
+}
+
+.card {
+  background: none;
+  color: #281A24;
+  border: none;
+}
+
+.card-header {
+  font-size: 30px;
+}
+
+.btn-primary {
+  background: #281A24;
+  border: #281A24;
+}
+
+.btn-link {
+  color: #281A24;
+}
