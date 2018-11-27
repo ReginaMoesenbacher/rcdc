@@ -10466,7 +10466,10 @@ a.text-dark:focus {
   }
 }
 
+/********************************Generel****************************************/
+
 body {
+  background-color: white;
   color: #000000;
   font-family: "Playfair+Display", serif;
   font-weight: 200;
@@ -10481,10 +10484,13 @@ body p {
   font-size: 1em;
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body a {
+  color: #281A24;
+}
+
+body a:hover {
+  color: #281A24;
+  text-decoration: none;
 }
 
 /********************************Nav****************************************/
@@ -10581,6 +10587,100 @@ h2 {
 
 .info {
   background: white;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.info h3 {
+  font-size: 3em;
+}
+
+.cocktail_category .row div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+}
+
+.cocktail_category .row:nth-child(odd) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cocktail_category .row:nth-child(even) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cocktail_category .row div img {
+  width: 50px;
+  padding: 5px;
+}
+
+.cocktail_category .row div h3 {
+  width: 50%;
+  position: relative;
+}
+
+.cocktail_category .row div h3:before {
+  content: '';
+  width: 50%;
+  position: absolute;
+  left: 50px;
+  bottom: 0px;
+  height: 50%;
+  background-color: #6633996b;
+  z-index: -9;
+}
+
+.cocktail_category .row img {
+  width: 50%;
 }
 
 /********************************Login&Register****************************************/
@@ -10629,7 +10729,16 @@ h2 {
   border: #281A24;
 }
 
+.btn-primary:hover {
+  background: white;
+  color: #281A24;
+}
+
 .btn-link {
   color: #281A24;
+}
+
+.btn-link:hover {
+  color: white;
 }
 

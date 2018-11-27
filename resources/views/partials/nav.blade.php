@@ -1,5 +1,5 @@
 <a href="{{ url('/') }}"><img src="../images/logo.svg" alt="Logo"></a>
-<a href="">Mixit</a>
+<a href="#">Mixit</a>
 
 @auth
     <a href="{{ url('/home') }}">Home</a>
