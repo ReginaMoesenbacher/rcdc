@@ -1,15 +1,12 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 /********************************Generel****************************************/
-body{
+body {
   background-color: white;
   color: #000000;
   font-family: $font-family-serif;
@@ -18,7 +15,7 @@ body{
   padding: 0;
   box-sizing: border-box;
 
-  p{
+  p {
     font-family: $font-family-sans-serif;
     font-size: 1em;
   }
@@ -26,8 +23,7 @@ body{
   a {
     color: #281A24;
 
-
-    &:hover{
+    &:hover {
       color: #281A24;
       text-decoration: none;
     }
@@ -45,8 +41,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
 
-  img{
+  img {
     width: 50px;
   }
 
@@ -59,11 +56,11 @@ nav {
     text-align: center;
     //width: 100%;
 
-    &:hover{
+    &:hover {
       color: #A6988D;
       transform: rotate(5deg) scale(1.1);
     }
-    &:hover:before, &:hover:after{
+    &:hover:before, &:hover:after {
       opacity: 1;
       width: 10px;
     }
@@ -104,7 +101,7 @@ nav {
 
 }
 
-h2{
+h2 {
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -116,21 +113,25 @@ h2{
 
 .info {
   background: white;
-  height:80vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  h3{
+  h3 {
     font-size: 3em;
+  }
+  img {
+    width: 50px;
+    padding: 5px;
   }
 }
 
 .cocktail_category {
   .row {
-
+    //box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
     div {
       display: flex;
       flex-direction: column;
@@ -146,6 +147,7 @@ h2{
       align-items: center;
       text-align: center;
       margin-bottom: 50px;
+
     }
 
     &:nth-child(even) {
@@ -155,31 +157,31 @@ h2{
       align-items: center;
       text-align: center;
       margin-bottom: 50px;
+
     }
 
     div {
-      img{
-        width: 50px;
+
+      img {
+        width: 40px;
         padding: 5px;
       }
-
       h3 {
         width: 50%;
         position: relative;
 
         &:before {
-          content: '';
+          content: "";
           width: 50%;
+          left: 30px;
           position: absolute;
-          left: 50px;
-          bottom: 0px;
+          bottom: 0;
           height: 50%;
-          background-color: #6633996b;
+          background-color: #F2DFCE;
           z-index: -9;
         }
       }
     }
-
 
     img {
       width: 50%;
@@ -239,3 +241,104 @@ h2{
   }
 }
 
+nav {
+  li {
+    list-style: none;
+  }
+}
+
+/********************************Details****************************************/
+
+.details {
+
+  height: 100vh;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 200px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  p {
+    text-align: center;
+    width: 500px;
+  }
+
+  ul {
+    margin: 70px auto;
+    padding-bottom: 50px;
+  }
+
+  .page-link{
+    color:#281A24;
+  }
+
+  .page-item.active .page-link {
+    background-color: #281A24;
+    border-color:#281A24;
+    color: #F2DFCE;
+  }
+
+}
+
+/********************************Search****************************************/
+
+.flex-form input[type="submit"] {
+  background: #281A24;
+  border: 1px solid #281A24;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #281A24;
+    background: #F2DFCE;
+    border: 1px solid #F2DFCE;
+  }
+}
+
+.flex-form {
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+
+  > * {
+    border: 0;
+    padding: 0 0 0 10px;
+    background: #fff;
+    line-height: 50px;
+    font-size: 1rem;
+    border-radius: 0;
+    outline: 0;
+    margin: 0;
+  }
+}
+
+input[type="search"] {
+  flex-basis: 500px;
+}
+
+/********************************Footer****************************************/
+
+.footer {
+  background-color: #281A24;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    color: white;
+  }
+  img {
+    width: 100%;
+  }
+}

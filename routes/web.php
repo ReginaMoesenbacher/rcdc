@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', ["uses" => "RootController@index", "as" => "index"]);
-
 Auth::routes();
+
+Route::get('/', ["uses" => "RootController@index", "as" => "index"]);
+Route::get('/home', ["uses" => "RootController@index", "as" => "home"]);
+Route::get('/{category}', ["uses" => "RootController@show", "as" => "show"]);
+
+Route::get('/home/profile', function () {
+    return view('home/profile');
+});
+
+
+
 

@@ -10,35 +10,43 @@
 
     <section class="info">
         <h3>Mix your own Coktail !</h3>
-        <p>\</p>
+        <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
         <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
             if you have the talent for a barkeeper.</p>
+        <p>Search for or favourite Cocktail !</p>
+        <section id="#home" class="cover">
+            <form  class="flex-form">
+                <label for="from">
+                    <i class="ion-search"></i>
+                </label>
+                <input type="search" placeholder="Find your favourite Cocktail">
+                <input type="submit" value="search">
+            </form>
+        </section>
     </section>
 
 
-    {{--@foreach($drinks as $key => $drink)--}}
-    {{--<p>{{ $drink["strCategory"] }}</p>--}}
-
-    {{--<img src="{{$drink->category_img}}" alt="{{$drink->category}}">--}}
-    {{--@endforeach--}}
     <section class="cocktail_category">
         <div class="container">
             <div class="col">
 
-                @foreach($img as $key => $drink)
+
+            @foreach($drinks as $drink)
 
                     <div class="row">
 
-                        <div>
-                            <h3><a href="#">{{$drink->category}}</a></h3>
-                            <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
-                            <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
-                                if you have the talent for a barkeeper.</p>
-                        </div>
 
 
+                        @if ($img->firstWhere('category', $drink->category_api))
+                            <div>
+                                <h3><a href="{{ route("show", ["category" => $drink->slug]) }}">{{$drink->category_string}}</a></h3>
+                                <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
+                                <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
+                                    if you have the talent for a barkeeper.</p>
+                            </div>
+                            <img src="{{$img->firstWhere('category', $drink->category_string)->category_img}}" alt="{{$drink->category_string}}">
+                        @endif
 
-                        <img src="{{$drink->category_img}}" alt="{{$drink->category}}">
                     </div>
 
 

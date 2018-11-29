@@ -28,6 +28,10 @@
             @yield("content")
         </main>
 
+        <footer>
+            @include("partials.footer")
+        </footer>
+
     </div>
 </body>
 </html>

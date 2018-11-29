@@ -10510,6 +10510,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 nav img {
@@ -10608,6 +10610,11 @@ h2 {
   font-size: 3em;
 }
 
+.info img {
+  width: 50px;
+  padding: 5px;
+}
+
 .cocktail_category .row div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10659,7 +10666,7 @@ h2 {
 }
 
 .cocktail_category .row div img {
-  width: 50px;
+  width: 40px;
   padding: 5px;
 }
 
@@ -10669,13 +10676,13 @@ h2 {
 }
 
 .cocktail_category .row div h3:before {
-  content: '';
+  content: "";
   width: 50%;
+  left: 30px;
   position: absolute;
-  left: 50px;
-  bottom: 0px;
+  bottom: 0;
   height: 50%;
-  background-color: #6633996b;
+  background-color: #F2DFCE;
   z-index: -9;
 }
 
@@ -10740,5 +10747,120 @@ h2 {
 
 .btn-link:hover {
   color: white;
+}
+
+nav li {
+  list-style: none;
+}
+
+/********************************Details****************************************/
+
+.details {
+  height: 100vh;
+  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 200px;
+}
+
+.details img {
+  width: 50px;
+  height: 50px;
+}
+
+.details p {
+  text-align: center;
+  width: 500px;
+}
+
+.details ul {
+  margin: 70px auto;
+  padding-bottom: 50px;
+}
+
+.details .page-link {
+  color: #281A24;
+}
+
+.details .page-item.active .page-link {
+  background-color: #281A24;
+  border-color: #281A24;
+  color: #F2DFCE;
+}
+
+/********************************Search****************************************/
+
+.flex-form input[type="submit"] {
+  background: #281A24;
+  border: 1px solid #281A24;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  color: #281A24;
+  background: #F2DFCE;
+  border: 1px solid #F2DFCE;
+}
+
+.flex-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 0 0 0 10px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: 0;
+  margin: 0;
+}
+
+input[type="search"] {
+  -ms-flex-preferred-size: 500px;
+      flex-basis: 500px;
+}
+
+/********************************Footer****************************************/
+
+.footer {
+  background-color: #281A24;
+  color: white;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer img {
+  width: 100%;
 }
 
