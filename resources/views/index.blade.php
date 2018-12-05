@@ -9,13 +9,13 @@
 
 
     <section class="info">
-        <h3>Mix your own Coktail !</h3>
+        <h3>Mix your own Cocktail !</h3>
         <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
         <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
             if you have the talent for a barkeeper.</p>
         <p>Search for or favourite Cocktail !</p>
         <section id="#home" class="cover">
-            <form  class="flex-form">
+            <form class="flex-form">
                 <label for="from">
                     <i class="ion-search"></i>
                 </label>
@@ -30,32 +30,31 @@
         <div class="container">
             <div class="col">
 
-
-            @foreach($drinks as $drink)
+                @php($count = 0)
+                @foreach($drinks as $drink)
 
                     <div class="row">
 
 
+                        <div>
+                            <h3>
+                                <a href="{{ route("index", ["category" => $drink->slug]) }}">{{$drink->category_string}}</a>
+                            </h3>
+                            <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
+                            <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the
+                                ingredients and you'll see
+                                if you have the talent for a barkeeper.</p>
+                        </div>
 
-                        @if ($img->firstWhere('category', $drink->category_api))
-                            <div>
-                                <h3><a href="{{ route("show", ["category" => $drink->slug]) }}">{{$drink->category_string}}</a></h3>
-                                <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
-                                <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
-                                    if you have the talent for a barkeeper.</p>
-                            </div>
-                            <img src="{{$img->firstWhere('category', $drink->category_string)->category_img}}" alt="{{$drink->category_string}}">
-                        @endif
+                            <img src="{{ $img[$count]->category_img}}" alt="">
 
+                        @php(++$count)
                     </div>
 
 
                 @endforeach
             </div>
         </div>
-
-
-
 
 
     </section>

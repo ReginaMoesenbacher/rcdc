@@ -11,6 +11,7 @@ class CategorySlugRelation extends Model
 
     protected $fillable = [
         'category_string',
-        'slug'
+        'slug',
+        'category_api'
     ];
 }

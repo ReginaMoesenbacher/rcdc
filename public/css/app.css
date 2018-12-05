@@ -10756,7 +10756,7 @@ nav li {
 /********************************Details****************************************/
 
 .details {
-  height: 100vh;
+  height: 150vh;
   font-size: 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10767,17 +10767,12 @@ nav li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 200px;
+  /* linkone */
 }
 
 .details img {
   width: 50px;
   height: 50px;
-}
-
-.details p {
-  text-align: center;
-  width: 500px;
 }
 
 .details ul {
@@ -10793,6 +10788,62 @@ nav li {
   background-color: #281A24;
   border-color: #281A24;
   color: #F2DFCE;
+}
+
+.details .thin {
+  font-weight: 300;
+  color: #281A24;
+}
+
+.details a {
+  width: 100%;
+  font-size: 1em;
+  color: #281A24;
+  position: relative;
+  text-decoration: none;
+}
+
+.details .link-1 ul {
+  width: 400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.details .link-1 ul li {
+  list-style: none;
+}
+
+.details [class^="link-"] {
+  display: inline-block;
+  margin: 1em;
+}
+
+.details .link-1 a:before,
+.details .link-1 a:after {
+  content: '';
+  border-bottom: solid 1px #281A24;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+}
+
+.details .link-1 a:before {
+  left: 0;
+}
+
+.details .link-1 a:after {
+  right: 0;
+}
+
+.details .link-1 a:hover:before,
+.details .link-1 a:hover:after {
+  width: 50%;
+}
+
+.details .link-1 a:before,
+.details .link-1 a:after {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 /********************************Search****************************************/
@@ -10854,6 +10905,7 @@ input[type="search"] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .footer a {
@@ -10861,6 +10913,14 @@ input[type="search"] {
 }
 
 .footer img {
-  width: 100%;
+  width: 20%;
+}
+
+.footer .footer_logo {
+  padding: 30px 0;
+}
+
+.footer .footer_logo img {
+  width: 50%;
 }
 
