@@ -19,6 +19,9 @@ Route::get('/{category}', ["uses" => "DrinkController@index", "as" => "index"]);
 Route::post('/{drink_id}', ["uses" => "DrinkController@show", "as" => "show"]);
 
 
+
+
+
 Route::get('/home/profile', function () {
     return view('home/profile');
 });

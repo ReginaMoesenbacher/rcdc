@@ -11,14 +11,17 @@ class DrinkController extends Controller
 {
     public function index($category)
     {
-        //dd($category);
-        $param = CategorySlugRelation::where('slug', $category)->firstOrFail() ;
+        //dd($category)
+
+        $param = CategorySlugRelation::where('slug', $category)->firstOrFail();
         $urlParam = $param->category_api;
         $json = file_get_contents('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' . $urlParam);
         $drinks = json_decode($json, true);
         $drinks = $drinks["drinks"];
 
+        $categories = CategorySlugRelation::all();
 
+// Pagenate Anzahl der Seiten
         //This would contain all data to be sent to the view
         $data = array();
 
@@ -29,7 +32,7 @@ class DrinkController extends Controller
         $collection = new Collection($drinks);
 
         //Define how many items we want to be visible in each page
-        $per_page = 10;
+        $per_page = 9;
 
         //Slice the collection to get the items to display in current page
         $currentPageResults = $collection->slice(($currentPage-1) * $per_page, $per_page)->all();
@@ -40,18 +43,21 @@ class DrinkController extends Controller
         //Set base url for pagination links to follow e.g custom/url?page=6
         $data['results']->setPath($category);
 
-        return view('cocktails.index', $data);
-
+        return view('cocktails.index', compact('categories', 'data'));
+//
     }
 
-    public function show( $drink_id)
+//Zeigt mir die Details an
+    public function show($drink_id)
     {
 
         $json = file_get_contents('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' . $drink_id);
-        $drinks = json_decode($json, true);
+        $drinks_detail = json_decode($json, true);
 
         //dd($drinks);
+        $categories = CategorySlugRelation::all();
 
-        return view('cocktails.show', compact('drinks'));
+        return view('cocktails.show', compact('categories','drinks_detail'));
+
     }
 }

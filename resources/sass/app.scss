@@ -1,11 +1,19 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
 // Variables
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+// Coverflow
+@import "coverflow";
 
-/********************************Generel****************************************/
+
+/*----------------------------------------------*\
+                  Generel
+\*----------------------------------------------*/
 body {
   background-color: white;
   color: #000000;
@@ -30,7 +38,9 @@ body {
   }
 }
 
-/********************************Nav****************************************/
+/*----------------------------------------------*\
+                   Nav
+\*----------------------------------------------*/
 
 nav {
   background: white;
@@ -89,8 +99,9 @@ nav {
 
 }
 
-/********************************landingpage****************************************/
-
+/*----------------------------------------------*\
+                    Landingpage
+\*----------------------------------------------*/
 .background {
   background-image: url("../images/bar.jpg");
   background-repeat: no-repeat;
@@ -189,7 +200,9 @@ h2 {
   }
 }
 
-/********************************Login&Register****************************************/
+/*----------------------------------------------*\
+                    Login & Register
+\*----------------------------------------------*/
 .container_background {
   font-family: $font-family-serif;
   background-image: url("../images/loginbackground.jpg");
@@ -247,96 +260,99 @@ nav {
   }
 }
 
-/********************************Details****************************************/
+/*----------------------------------------------*\
+                    Details
+\*----------------------------------------------*/
 
 .details {
 
-  height: 150vh;
-  font-size: 1.2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 100%;
 
-
-
-  img {
-    width: 50px;
-    height: 50px;
-  }
-
-  ul {
-    margin: 70px auto;
-    padding-bottom: 50px;
-  }
-
-  .page-link{
-    color:#281A24;
-  }
-
-  .page-item.active .page-link {
-    background-color: #281A24;
-    border-color:#281A24;
-    color: #F2DFCE;
-  }
-
-  .thin {
-    font-weight: 300;
-    color: #281A24;
-  }
-
-  a {
-    width: 100%;
-    font-size: 1em;
-    color: #281A24;
-    position: relative;
-    text-decoration: none;
+  .row {
+    margin-top: 5%;
   }
 
   .link-1 {
-    ul {
-      width: 400px;
-      margin: 0 auto;
-      padding: 0;
-      li{
-          list-style: none;
-      }
+    align-items: center;
+  }
+
+  .page-link {
+    color: #281A24;
+  }
+
+
+  .snip1556 {
+    max-width: 310px;
+    min-width: 250px;
+    box-shadow: none !important;
+    padding: 30px 40px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+
+    &:before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.4s ease-out;
+      transition: all 0.4s ease-out;
+    }
+
+    img {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      max-width: 100%;
+      position: relative;
+      vertical-align: top;
+    }
+
+    form {
+      background-color: #281A24;
+      bottom: 0px;
+      left: 40px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    button {
+      position: absolute;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+      transform-origin: 0% 0%;
+      color: #fff;
+      left: 100%;
+      letter-spacing: 1px;
+      margin: 12px 0;
+      opacity: 0.8;
+      padding: 6px 40px 0 0;
+      right: 0;
+      text-transform: uppercase;
+      top: 0;
+      white-space: nowrap;
+      background:none;
+      border:none;
+      font-size: 1.2em;
+      cursor: pointer;
     }
   }
-
-
-  [class^="link-"] {
-    display: inline-block;
-    margin: 1em;
-  }
-
-  /* linkone */
-  .link-1 a:before, .link-1 a:after {
-    content: '';
-    border-bottom: solid 1px #281A24;
-    position: absolute;
-    bottom: 0;
-    width: 0;
-  }
-
-  .link-1 a:before {
-    left: 0;
-  }
-  .link-1 a:after {
-    right: 0;
-  }
-
-  .link-1 a:hover:before, .link-1 a:hover:after {
-    width: 50%;
-  }
-
-  .link-1 a:before, .link-1 a:after {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-
 }
 
-/********************************Search****************************************/
+aside {
+  position: absolute;
+  top: 70px;
+  font-size: 1.3em;
+  padding: 40px 10px;
+}
+
+/*----------------------------------------------*\
+                    Show
+\*----------------------------------------------*/
+
+/*----------------------------------------------*\
+                    Search
+\*----------------------------------------------*/
 
 .flex-form input[type="submit"] {
   background: #281A24;
@@ -376,7 +392,17 @@ input[type="search"] {
   flex-basis: 500px;
 }
 
-/********************************Footer****************************************/
+.details-search {
+  padding-top: 100px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/*----------------------------------------------*\
+                    Footer
+\*----------------------------------------------*/
 
 .footer {
   background-color: #281A24;
@@ -386,7 +412,7 @@ input[type="search"] {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-
+  margin-top: 15px;
 
   a {
     color: white;
