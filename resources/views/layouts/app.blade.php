@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <nav>
             @include("partials.nav")
         </nav>

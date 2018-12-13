@@ -268,10 +268,6 @@ nav {
 
   height: 100%;
 
-  .row {
-    margin-top: 5%;
-  }
-
   .link-1 {
     align-items: center;
   }
@@ -349,6 +345,10 @@ aside {
 /*----------------------------------------------*\
                     Show
 \*----------------------------------------------*/
+.show {
+  height: 100vh;
+
+}
 
 /*----------------------------------------------*\
                     Search
@@ -412,7 +412,6 @@ input[type="search"] {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: 15px;
 
   a {
     color: white;

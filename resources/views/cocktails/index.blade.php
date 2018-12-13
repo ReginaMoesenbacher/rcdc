@@ -49,7 +49,7 @@
 
 
     <section class="container details mr-0">
-        <div class="row">
+        <div class="row mt-5">
             @foreach ($data['results'] as $drink)
                 <div class="col-md-4">
                     <div class="link-1 card mb-4 snip1556">

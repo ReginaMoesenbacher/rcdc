@@ -10828,10 +10828,6 @@ nav li {
   height: 100%;
 }
 
-.details .row {
-  margin-top: 5%;
-}
-
 .details .link-1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -10911,6 +10907,10 @@ aside {
                     Show
 \*----------------------------------------------*/
 
+.show {
+  height: 100vh;
+}
+
 /*----------------------------------------------*\
                     Search
 \*----------------------------------------------*/
@@ -10989,7 +10989,6 @@ input[type="search"] {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 15px;
 }
 
 .footer a {

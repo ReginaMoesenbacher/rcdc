@@ -28,14 +28,18 @@
 
 
 
-    <div class="container">
-        <div class="col">
-            <div class="row">
+    <section class="container show mr-0 mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="card">
 
+                    {{--{{dd($drinks_detail['drinks'][0]['strDrink'])}}--}}
+                    <h3>{{$drinks_detail['drinks'][0]['strDrink']}}</h3>
+                    <p>{{$drinks_detail['drinks'][0]['strInstructions']}}</p>
 
-                <h1>bitch please</h1>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
