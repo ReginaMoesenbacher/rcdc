@@ -3,7 +3,8 @@
 
 
 @section('content')
-    <aside>
+
+    <aside class="sidebar">
         <ul class="nav flex-column">
             @foreach($categories as $category)
                 <li class="nav-item">
@@ -14,37 +15,15 @@
         </ul>
     </aside>
 
-    <section class="cover details-search">
-
+    <section id="#home" class="cover">
         <form class="flex-form">
-            <label for="from">
+            <label for="search">
                 <i class="ion-search"></i>
             </label>
-            <input type="search" placeholder="Find your favourite Cocktail">
+            <input id="search" type="search" placeholder="Find your favourite Cocktail">
             <input type="submit" value="search">
         </form>
-
     </section>
-
-
-
-    {{-- Show results--}}
-
-    {{--<section class="coverflow" id="player">--}}
-    {{--<div class="coverflow-wrap" >--}}
-    {{--@foreach ($drinks as $drink)--}}
-    {{--<div class="coverflow-tray ">--}}
-    {{--<div class="coverflow-cell">--}}
-
-    {{--<img src="{{ $drink["strDrinkThumb"] }}" alt="">--}}
-    {{--<h2>{{ $drink["strDrink"] }}</h2>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--@endforeach--}}
-    {{--</div>--}}
-    {{--</section>--}}
-
-
 
 
 

@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <aside>
+    <aside class="show_sidebar">
+
         <ul class="nav flex-column">
             @foreach($categories as $category)
                 <li class="nav-item">
@@ -28,7 +29,7 @@
 
 
 
-    <section class="container show mr-0 mt-5">
+    <section class="container show_section mr-0 mt-5">
         <div class="row">
             <div class="col">
                 <div class="card">

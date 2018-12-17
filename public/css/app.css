@@ -10573,8 +10573,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-          box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 3px 3px 8px #b3b3b3;
+          box-shadow: 3px 3px 8px #b3b3b3;
 }
 
 nav img {
@@ -10629,6 +10629,14 @@ nav a:after {
           transform: rotate(-60deg) translateY(-50%) translateX(-50%);
 }
 
+nav .dropdown-menu {
+  overflow: hidden;
+}
+
+nav .nav-item {
+  cursor: pointer;
+}
+
 /*----------------------------------------------*\
                     Landingpage
 \*----------------------------------------------*/
@@ -10669,6 +10677,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .info h3 {
@@ -10680,7 +10689,13 @@ h2 {
   padding: 5px;
 }
 
+.cocktail_category .row {
+  width: 50%;
+  padding-bottom: 100px;
+}
+
 .cocktail_category .row div {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10696,12 +10711,11 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   padding: 30px;
+  overflow: hidden;
 }
 
 .cocktail_category .row:nth-child(odd) {
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -10714,8 +10728,6 @@ h2 {
 
 .cocktail_category .row:nth-child(even) {
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -10752,7 +10764,7 @@ h2 {
 }
 
 .cocktail_category .row img {
-  width: 50%;
+  width: 80%;
 }
 
 /*----------------------------------------------*\
@@ -10764,7 +10776,7 @@ h2 {
   background-image: url(/images/loginbackground.jpg?e12e07dbb48d1889f90f008d2e741e72);
   background-size: cover;
   padding: 0;
-  height: 100vh;
+  height: 120vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10907,8 +10919,94 @@ aside {
                     Show
 \*----------------------------------------------*/
 
-.show {
+.show_section {
   height: 100vh;
+}
+
+/*----------------------------------------------*\
+                    Mixit
+\*----------------------------------------------*/
+
+.sidebar {
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  overflow: scroll;
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  width: 260px;
+  left: 0;
+  border: 1px solid #281a246e;
+  height: 100vh;
+}
+
+.sidebar form label {
+  width: 100%;
+  padding: 15px;
+  color: #281A24;
+  margin-bottom: 1px;
+  border-left: 10px solid transparent;
+}
+
+.mixit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 50px;
+}
+
+.mixit img {
+  height: 100vh;
+  width: 18%;
+  padding-bottom: 10px;
+}
+
+.sidebar_cart {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  border: 1px solid #281a246e;
+  border-radius: 2px;
+  height: 100vh;
+}
+
+.sidebar_cart img {
+  width: 15%;
+}
+
+.sidebar_cart button {
+  background: #281A24;
+  color: #F2DFCE;
+  margin-top: 50px;
+  padding: 10px 25px;
+  font-size: 1em;
+}
+
+.sidebar_cart button:hover {
+  background: #F2DFCE;
+  color: #281A24;
+}
+
+.sidebar_cart .cart_ingredients {
+  padding-top: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*----------------------------------------------*\

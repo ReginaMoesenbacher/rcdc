@@ -40,6 +40,79 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control{{ $errors->has('City') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required>
+
+                                @if ($errors->has('city'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="zipcode" class="col-md-4 col-form-label text-md-right">{{ __('Zip Code') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="zipcode" type="text" class="form-control{{ $errors->has('Zip Code') ? ' is-invalid' : '' }}" name="zipcode" value="{{ old('zipcode') }}" required>
+
+                                @if ($errors->has('zipcode'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('zipcode') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control{{ $errors->has('Address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+
+                                @if ($errors->has('address'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="state" type="text" class="form-control{{ $errors->has('State') ? ' is-invalid' : '' }}" name="state" value="{{ old('state') }}" required>
+
+                                @if ($errors->has('state'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('state') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Telephone Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="tel" type="text" class="form-control{{ $errors->has('Number') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required>
+
+                                @if ($errors->has('tel'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('tel') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

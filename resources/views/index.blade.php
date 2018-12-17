@@ -14,15 +14,17 @@
         <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
             if you have the talent for a barkeeper.</p>
         <p>Search for or favourite Cocktail !</p>
+
         <section id="#home" class="cover">
             <form class="flex-form">
-                <label for="from">
+                <label for="search">
                     <i class="ion-search"></i>
                 </label>
-                <input type="search" placeholder="Find your favourite Cocktail">
+                <input id="search"  type="search" placeholder="Find your favourite Cocktail">
                 <input type="submit" value="search">
             </form>
         </section>
+
     </section>
 
 
@@ -36,17 +38,18 @@
                     <div class="row">
 
 
-                        <div>
+                        <div data-aos="fade-right"
+                             data-aos-offset="300"
+                             data-aos-easing="ease-in-sine">
                             <h3>
                                 <a href="{{ route("index", ["category" => $drink->slug]) }}">{{$drink->category_string}}</a>
                             </h3>
                             <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
-                            <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the
-                                ingredients and you'll see
-                                if you have the talent for a barkeeper.</p>
+                            <p>{{$img[$count]->category_desc}}</p>
                         </div>
 
-                            <img src="{{ $img[$count]->category_img}}" alt="">
+                            <img data-aos="zoom-in-up" src="{{ $img[$count]->category_img}}" alt="{{ $img[$count]->category}}">
+
 
                         @php(++$count)
                     </div>

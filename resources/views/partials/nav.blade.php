@@ -1,5 +1,5 @@
 <a href="{{ url('/') }}"><img src="../images/logo.svg" alt="Logo"></a>
-<a href="#">Mixit</a>
+<a href="{{ url('/mixit') }}">Mixit</a>
 
 @auth
 @else
@@ -20,8 +20,8 @@
             {{ Auth::user()->name }} <span class="caret"></span>
         </a>
 
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a href="" class="dropdown-item">Profile</a>
+        <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
+            <a href="{{route("profile")}}" class="dropdown-item">Profile</a>
             <a href="" class="dropdown-item">Shopping Cart</a>
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();

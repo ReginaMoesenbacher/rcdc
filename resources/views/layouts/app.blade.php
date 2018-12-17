@@ -19,20 +19,27 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <link rel="icon" type="image/png" href="{{ asset('/images/favicon.png') }}">
+
+
+    {{--Scroll Animation--}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <div id="app">
-        <nav>
-            @include("partials.nav")
-        </nav>
-        <main>
-            @yield("content")
-        </main>
+<div id="app">
+    <nav>
+        @include("partials.nav")
+    </nav>
+    <main>
+        @yield("content")
+    </main>
 
-        <footer>
-            @include("partials.footer")
-        </footer>
+    <footer>
+        @include("partials.footer")
+    </footer>
 
-    </div>
+</div>
 </body>
 </html>
