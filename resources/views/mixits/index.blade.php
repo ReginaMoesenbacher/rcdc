@@ -32,14 +32,12 @@
 
 
 
-        <form method="post" action="/mixit">
-            @csrf
 
             @auth
                 <section class="cart_ingredients"></section>
                 <button id="buy" class="btn">Buy</button>
             @endauth
-        </form>
+
 
             @guest
                 <button type="submit" class="btn" onclick="window.location.href='{{ route('register') }}'">Register</button>

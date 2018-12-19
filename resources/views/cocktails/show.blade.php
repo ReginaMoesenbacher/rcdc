@@ -32,11 +32,13 @@
     <section class="container show_section mr-0 mt-5">
         <div class="row">
             <div class="col">
+                <img src="{{$drinks_detail['drinks'][0]['strDrinkThumb']}}" alt="{{$drinks_detail['drinks'][0]['strDrink']}}" data-aos="zoom-in-up">
                 <div class="card">
 
-                    {{--{{dd($drinks_detail['drinks'][0]['strDrink'])}}--}}
+                    {{--{{dd($drinks_detail['drinks'][0]['strDrinkThumb'])}}--}}
                     <h3>{{$drinks_detail['drinks'][0]['strDrink']}}</h3>
                     <p>{{$drinks_detail['drinks'][0]['strInstructions']}}</p>
+
 
                 </div>
             </div>

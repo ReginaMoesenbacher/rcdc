@@ -18,7 +18,6 @@
     </div>
     <div>
         <img src="{{ asset('images/cocktail_white.svg') }}" alt="Cocktail">
-        {{--<p>|</p>--}}
     </div>
     <div>
        <h4><a href="">Privacy Policy</a></h4>

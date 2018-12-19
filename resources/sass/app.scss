@@ -364,6 +364,20 @@ aside {
 .show_section {
   height: 100vh;
 
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+      width: 30%;
+    }
+
+    .card {
+      padding: 50px;
+    }
+  }
 }
 
 /*----------------------------------------------*\

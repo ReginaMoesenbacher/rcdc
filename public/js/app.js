@@ -13918,21 +13918,6 @@ Vue.component('drinks', __webpack_require__(40));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// document.getElementsByClassName("text").onchange = function () {
-//     var x = this.id;
-//     console.log('hallo');
-//     var div = document.createElement('div');
-//     div.style.backgroundColor = "black";
-//     div.style.position = "absolute";
-//     div.style.left = "50px";
-//     div.style.top = "50px";
-//     div.style.height = "10px";
-//     div.style.width = "10px";
-//
-//     document.getElementsByTagName('body')[0].appendChild(div);
-// };
-
-
 var $counter = 0;
 
 $('.text').on('change', function () {
@@ -13966,16 +13951,24 @@ $('.text').on('change', function () {
     }
 });
 
-$('#buy').on('click', function () {
+$('#buy').on('click', function (event) {
+    event.preventDefault();
 
-    $.ajax({ url: "/mixit", success: function success(result) {
-            console.log(result);
-        } });
+    var cart = {};
 
-    // $('.cart_ingredients').find('span').each(function (){
-    //      $(this).text();
-    // });
+    var cartItems = $('.cart_ingredients span');
 
+    cartItems.each(function (index) {
+        cart[index] = $(this).text();
+    });
+
+    //console.log(cart);
+    $.ajax({
+        type: "POST",
+        url: "/buyMixit",
+        data: { cart: cart },
+        dataType: 'json'
+    });
 });
 
 /***/ }),

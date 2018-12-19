@@ -28,20 +28,6 @@ Vue.component('drinks', require('./components/CategoryComponent.vue'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// document.getElementsByClassName("text").onchange = function () {
-//     var x = this.id;
-//     console.log('hallo');
-//     var div = document.createElement('div');
-//     div.style.backgroundColor = "black";
-//     div.style.position = "absolute";
-//     div.style.left = "50px";
-//     div.style.top = "50px";
-//     div.style.height = "10px";
-//     div.style.width = "10px";
-//
-//     document.getElementsByTagName('body')[0].appendChild(div);
-// };
-
 
 let $counter = 0;
 
@@ -54,10 +40,9 @@ $('.text').on('change', function () {
     let $clonedList = $('.cart_ingredients');
 
 
+    if ($checkBox.is(":checked")) {
 
-    if ($checkBox.is(":checked")){
-
-        if($counter < 5){
+        if ($counter < 5) {
             $counter++
             console.log($clonedList.length)
             // console.log('added')
@@ -65,7 +50,7 @@ $('.text').on('change', function () {
             $clonedList.append($cloneList);
         }
 
-    } else if (!($checkBox.is(":checked")) ) {
+    } else if (!($checkBox.is(":checked"))) {
         $counter--
         // console.log('unchecked');
         // console.log($liid);
@@ -74,25 +59,34 @@ $('.text').on('change', function () {
     }
 
 
-    if($counter == 5) {
+    if ($counter == 5) {
         $('.text').find('input').not(':checked').attr("disabled", true);
     } else if ($counter < 5) {
         $('.text').find('input').not(':checked').attr("disabled", false);
     }
 
 
-
 })
 
-$('#buy').on('click', function() {
+$('#buy').on('click', function (event) {
+    event.preventDefault();
 
-    $.ajax({url: "/mixit", success: function(result){
-            console.log(result);
-        }});
+    var cart = {};
 
-            // $('.cart_ingredients').find('span').each(function (){
-            //      $(this).text();
-            // });
+    var cartItems = $('.cart_ingredients span');
+
+    cartItems.each(function (index) {
+        cart[index] = ($(this).text());
+    });
+
+    //console.log(cart);
+    $.ajax({
+        type: "POST",
+        url: "/buyMixit",
+        data: {cart: cart},
+        dataType: 'json',
+    });
+
 
 
 })
