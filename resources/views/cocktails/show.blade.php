@@ -2,8 +2,9 @@
 
 @section('content')
 
+    <img class="nav__toggle" src="{{asset('images/right-arrow.png')}}" alt="Ingredients">
     <aside class="show_sidebar">
-
+        <img class="nav__toggle" src="{{asset('images/left-arrow.png')}}" alt="Zurück">
         <ul class="nav flex-column">
             @foreach($categories as $category)
                 <li class="nav-item">

@@ -3,8 +3,9 @@
 @section('content')
 
 
-
+    <img class="nav__toggle" src="{{asset('images/right-arrow.png')}}" alt="Ingredients">
     <aside class="sidebar">
+        <img class="nav__toggle" src="{{asset('images/left-arrow.png')}}" alt="Zurück">
         <div class="nav-item">
             <form action="" method="post" class="squaredFour">
                 @csrf
@@ -32,12 +33,14 @@
 
 
 
+        <form id="buyMixit" method="post" action="buyMixit">
+            @csrf
 
             @auth
                 <section class="cart_ingredients"></section>
-                <button id="buy" class="btn">Buy</button>
+                <button type="submit" id="buy" class="btn">Buy</button>
             @endauth
-
+        </form>
 
             @guest
                 <button type="submit" class="btn" onclick="window.location.href='{{ route('register') }}'">Register</button>

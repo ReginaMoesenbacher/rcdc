@@ -10554,6 +10554,14 @@ body a:hover {
   text-decoration: none;
 }
 
+body img {
+  border-radius: 10px;
+}
+
+body li {
+  list-style: none;
+}
+
 /*----------------------------------------------*\
                    Nav
 \*----------------------------------------------*/
@@ -10635,6 +10643,10 @@ nav .dropdown-menu {
 
 nav .nav-item {
   cursor: pointer;
+}
+
+.nav__toggle {
+  display: none;
 }
 
 /*----------------------------------------------*\
@@ -10950,14 +10962,14 @@ aside {
 \*----------------------------------------------*/
 
 .sidebar {
+  background: none;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
   overflow: scroll;
   position: absolute;
   top: 64px;
   bottom: 0;
-  width: 260px;
-  left: 0;
+  width: 300px;
   border: 1px solid #281a246e;
   height: 100vh;
 }
@@ -11029,10 +11041,47 @@ aside {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-left: 15px;
+}
+
+.sidebar_cart .cart_ingredients input {
+  border: none;
 }
 
 /*----------------------------------------------*\
-                    Search
+                   Shopping Cart
+\*----------------------------------------------*/
+
+.cart {
+  height: 100vh;
+}
+
+.cart h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.cart .sidebar_cart_ingredient ul {
+  padding-left: 0;
+}
+
+.cart .sidebar_cart_ingredient ul img {
+  width: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.cart .mixit {
+  position: relative;
+  padding-top: 110px;
+}
+
+.cart .mixit form {
+  width: 70%;
+}
+
+/*----------------------------------------------*\
+                    SearchController
 \*----------------------------------------------*/
 
 .flex-form input[type="submit"] {
@@ -11125,5 +11174,58 @@ input[type="search"] {
 
 .footer .footer_logo img {
   width: 50%;
+}
+
+/*----------------------------------------------*\
+                    Mediaqueries
+\*----------------------------------------------*/
+
+@media screen and (max-width: 850px) {
+  .sidebar,
+  show_sidebar {
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: white;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.6s ease;
+    transition: -webkit-transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+    z-index: 5;
+  }
+
+  .sidebar.open,
+  show_sidebar.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  .sidebar.close,
+  show_sidebar.close {
+    -webkit-transform: translateX(-100);
+            transform: translateX(-100);
+  }
+
+  .sidebar img,
+  show_sidebar img {
+    top: 5%;
+  }
+
+  .nav__toggle {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    cursor: pointer;
+  }
+
+  .sidebar_cart {
+    margin-top: 50px;
+    width: 100%;
+    border: none;
+  }
 }
 

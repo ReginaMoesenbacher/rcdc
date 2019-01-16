@@ -3,12 +3,14 @@
 
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 
+
 // Variables
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 // Coverflow
 @import "coverflow";
+
 
 
 /*----------------------------------------------*\
@@ -35,6 +37,14 @@ body {
       color: #281A24;
       text-decoration: none;
     }
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  li {
+    list-style: none;
   }
 }
 
@@ -107,6 +117,9 @@ nav {
 
 }
 
+.nav__toggle {
+  display: none;
+}
 /*----------------------------------------------*\
                     Landingpage
 \*----------------------------------------------*/
@@ -218,6 +231,8 @@ h2 {
 /*----------------------------------------------*\
                     Login & Register
 \*----------------------------------------------*/
+
+
 .container_background {
   font-family: $font-family-serif;
   background-image: url("../images/loginbackground.jpg");
@@ -384,16 +399,15 @@ aside {
                     Mixit
 \*----------------------------------------------*/
 .sidebar {
+  background: none;
   transition: all .3s ease-out;
   overflow: scroll;
   position: absolute;
   top: 64px;
   bottom: 0;
-  width: 260px;
-  left: 0;
+  width: 300px;
   border: 1px solid #281a246e;
   height: 100vh;
-
 
 
  form label{
@@ -454,12 +468,55 @@ aside {
     padding-top: 55px;
     display: flex;
     flex-direction: column;
+    padding-left: 15px;
+
+    input {
+      border: none;
+    }
+
+  }
+}
+
+/*----------------------------------------------*\
+                   Shopping Cart
+\*----------------------------------------------*/
+.cart {
+
+  h3 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  height: 100vh;
+
+  .sidebar_cart_ingredient {
+
+    ul {
+      padding-left: 0;
+
+      img {
+        width: 30px;
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  .mixit {
+    position: relative;
+    padding-top: 110px;
+
+    form {
+      width: 70%;
+    }
+
   }
 }
 
 
 /*----------------------------------------------*\
-                    Search
+                    SearchController
 \*----------------------------------------------*/
 
 .flex-form input[type="submit"] {
@@ -535,4 +592,41 @@ input[type="search"] {
     padding: 30px 0;
   }
 }
+/*----------------------------------------------*\
+                    Mediaqueries
+\*----------------------------------------------*/
+@media screen and (max-width: 850px) {
+  .sidebar, show_sidebar {
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 5;
+    &.open {
+      transform: translateX(0);
+    }
+    &.close {
+      transform: translateX(-100);
+    }
+    img{
+      top: 5%;
+    }
+  }
 
+  .nav__toggle {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    cursor: pointer;
+  }
+
+  .sidebar_cart {
+    margin-top: 50px;
+    width: 100%;
+    border: none;
+  }
+}

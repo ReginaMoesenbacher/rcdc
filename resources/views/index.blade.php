@@ -15,12 +15,12 @@
             if you have the talent for a barkeeper.</p>
         <p>Search for or favourite Cocktail !</p>
 
-        <section id="#home" class="cover">
-            <form class="flex-form">
+        <section id="home" class="cover">
+            <form class="flex-form" method="GET" {{--action="{{ route('search') }}"--}}>
                 <label for="search">
                     <i class="ion-search"></i>
                 </label>
-                <input id="search"  type="search" placeholder="Find your favourite Cocktail">
+                <input id="search"  type="search" placeholder="Find your favourite Cocktail" name="searchrterm">
                 <input type="submit" value="search">
             </form>
         </section>

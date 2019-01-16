@@ -13918,6 +13918,10 @@ Vue.component('drinks', __webpack_require__(40));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+/*----------------------------------------------*\
+                    Mixit
+\*----------------------------------------------*/
+
 var $counter = 0;
 
 $('.text').on('change', function () {
@@ -13927,15 +13931,22 @@ $('.text').on('change', function () {
     var $list = $(this).find('span');
     var $cloneList = $list.clone();
     var $clonedList = $('.cart_ingredients');
+    var $form = $('#buyMixit');
 
     if ($checkBox.is(":checked")) {
 
         if ($counter < 5) {
             $counter++;
-            console.log($clonedList.length);
+            $clonedList.length,
             // console.log('added')
             // console.log($liid);
-            $clonedList.append($cloneList);
+            $clonedList.append($('<input>').attr({
+                class: $list_class,
+                name: $cloneList.text(),
+                value: $cloneList.text()
+            }).appendTo($form));
+
+            console.log($cloneList.text());
         }
     } else if (!$checkBox.is(":checked")) {
         $counter--;
@@ -13951,24 +13962,51 @@ $('.text').on('change', function () {
     }
 });
 
-$('#buy').on('click', function (event) {
-    event.preventDefault();
+// $('#buy').on('click', function (_e) {
+//     _e.preventDefault();
+//
+//     var cart = {};
+//
+//     var cartItems = $('.cart_ingredients span');
+//
+//     cartItems.each(function (index) {
+//         cart[index] = ($(this).text());
+//     });
+//
+//     //console.log(cart);
+//     $.ajax({
+//         type: "POST",
+//         url: "/api/buyMixit",
+//         data: {cart},
+//         dataType: 'json'
+//
+//     }).done(function (result) {
+//         console.log("triggered", result);
+//         window.location.href = "https://rcdc.test/cart";
+//     }).fail(function (test) {
+//         console.log(test);
+//         alert("Sorry. Server unavailable. ");
+//     });
+//
+//
+// })
 
-    var cart = {};
 
-    var cartItems = $('.cart_ingredients span');
+/*----------------------------------------------*\
+                    Nav-Toggle
+\*----------------------------------------------*/
 
-    cartItems.each(function (index) {
-        cart[index] = $(this).text();
-    });
+$('.nav__toggle').on('click', function () {
+    $('.sidebar').toggleClass('open');
+});
 
-    //console.log(cart);
-    $.ajax({
-        type: "POST",
-        url: "/buyMixit",
-        data: { cart: cart },
-        dataType: 'json'
-    });
+/*----------------------------------------------*\
+                    Shopping Cart delete
+\*----------------------------------------------*/
+
+$('#conditionList .delete').click(function () {
+
+    $(this).parent().remove();
 });
 
 /***/ }),
@@ -13985,10 +14023,10 @@ window._ = __webpack_require__(14);
  */
 
 try {
-  window.Popper = __webpack_require__(3).default;
-  window.$ = window.jQuery = __webpack_require__(4);
+    window.Popper = __webpack_require__(3).default;
+    window.$ = window.jQuery = __webpack_require__(4);
 
-  __webpack_require__(16);
+    __webpack_require__(16);
 } catch (e) {}
 
 /**
@@ -14001,6 +14039,12 @@ window.axios = __webpack_require__(17);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -14010,9 +14054,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**

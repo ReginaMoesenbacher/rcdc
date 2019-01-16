@@ -29,6 +29,11 @@ Vue.component('drinks', require('./components/CategoryComponent.vue'));
  */
 
 
+/*----------------------------------------------*\
+                    Mixit
+\*----------------------------------------------*/
+
+
 let $counter = 0;
 
 $('.text').on('change', function () {
@@ -38,16 +43,28 @@ $('.text').on('change', function () {
     let $list = $(this).find('span');
     let $cloneList = $list.clone();
     let $clonedList = $('.cart_ingredients');
+    let $form = $('#buyMixit');
 
 
     if ($checkBox.is(":checked")) {
 
         if ($counter < 5) {
             $counter++
-            console.log($clonedList.length)
-            // console.log('added')
-            // console.log($liid);
-            $clonedList.append($cloneList);
+            $clonedList.length,
+                // console.log('added')
+                // console.log($liid);
+                $clonedList.append(
+                    $('<input>').attr({
+                        class: $list_class,
+                        name: $cloneList.text(),
+                        value: $cloneList.text(),
+                    }).appendTo($form)
+        )
+            ;
+
+            console.log($cloneList.text())
+
+
         }
 
     } else if (!($checkBox.is(":checked"))) {
@@ -68,25 +85,53 @@ $('.text').on('change', function () {
 
 })
 
-$('#buy').on('click', function (event) {
-    event.preventDefault();
+// $('#buy').on('click', function (_e) {
+//     _e.preventDefault();
+//
+//     var cart = {};
+//
+//     var cartItems = $('.cart_ingredients span');
+//
+//     cartItems.each(function (index) {
+//         cart[index] = ($(this).text());
+//     });
+//
+//     //console.log(cart);
+//     $.ajax({
+//         type: "POST",
+//         url: "/api/buyMixit",
+//         data: {cart},
+//         dataType: 'json'
+//
+//     }).done(function (result) {
+//         console.log("triggered", result);
+//         window.location.href = "https://rcdc.test/cart";
+//     }).fail(function (test) {
+//         console.log(test);
+//         alert("Sorry. Server unavailable. ");
+//     });
+//
+//
+// })
 
-    var cart = {};
 
-    var cartItems = $('.cart_ingredients span');
-
-    cartItems.each(function (index) {
-        cart[index] = ($(this).text());
-    });
-
-    //console.log(cart);
-    $.ajax({
-        type: "POST",
-        url: "/buyMixit",
-        data: {cart: cart},
-        dataType: 'json',
-    });
+/*----------------------------------------------*\
+                    Nav-Toggle
+\*----------------------------------------------*/
 
 
+$('.nav__toggle').on('click', function () {
+    $('.sidebar').toggleClass('open');
+});
+
+
+/*----------------------------------------------*\
+                    Shopping Cart delete
+\*----------------------------------------------*/
+
+$('#conditionList .delete').click(function () {
+
+    $(this).parent().remove()
 
 })
+

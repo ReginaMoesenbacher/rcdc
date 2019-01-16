@@ -51,6 +51,7 @@ class HomeController extends Controller
             'zipcode' => ['required'],
             'state' => ['required'],
             'address' => ['required'],
+            'password' => ['required']
         ]);
 
         $users = User::findOrFail(auth()->id());

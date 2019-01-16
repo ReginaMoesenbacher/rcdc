@@ -20,11 +20,13 @@ Route::middleware('auth')->group(function() {
     Route::get('/profile', ["uses" => "HomeController@edit", "as" => "profile"]);
     Route::post('/profile', ["uses" => "HomeController@update", "as" => "profile.update"]);
 
+    Route::post('/buyMixit', 'CartController@index');
 
 });
 
+//Route::get('/search/', ["uses" => "SearchController@search", "as" => "search"]);
 Route::get('/mixit', ["uses" => "MixitController@index", "as" => "index"]);
-Route::post('/mixit', ["uses" => "CartController@store", "as" => "store"]);
+Route::get('/cart', ["uses" => "CartController@index", "as" => "cart.index"]);
 Route::get('/{category}', ["uses" => "DrinkController@index", "as" => "index"]);
 Route::post('/{drink_id}', ["uses" => "DrinkController@show", "as" => "show"]);
 
