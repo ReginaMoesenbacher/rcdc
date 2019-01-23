@@ -3,25 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
@@ -52,10 +43,12 @@ class HomeController extends Controller
             'state' => ['required'],
             'address' => ['required'],
             'password' => ['required']
+
         ]);
 
         $users = User::findOrFail(auth()->id());
         $users->fill(\request()->all());
+        $users ->password = Hash::make(\request('password'));
         $users->save();
 
         return redirect('/');

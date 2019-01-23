@@ -1,0 +1,56 @@
+
+/*----------------------------------------------*\
+                    Login & Register
+\*----------------------------------------------*/
+
+.container_background {
+  font-family: $font-family-serif;
+  background-image: url("../images/loginbackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.form_table {
+  width: 100%;
+}
+
+.form_background {
+  background: $grey;
+}
+
+.card {
+  background: none;
+  color: $purple;
+  border: none;
+}
+
+.card-header {
+  font-size: 30px;
+}
+
+.btn-primary {
+  background: $purple;
+  border: $purple;
+
+  &:hover {
+    background: white;
+    color: $purple;
+  }
+}
+
+.btn-link {
+  color: $purple;
+
+  &:hover {
+    color: white;
+  }
+}

@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Category_images;
 
 
-
-
 class RootController extends Controller
 {
 

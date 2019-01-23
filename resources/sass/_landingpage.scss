@@ -1,0 +1,110 @@
+/*----------------------------------------------*\
+                    Landingpage
+\*----------------------------------------------*/
+.background {
+  background-image: url("../images/bar.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+
+}
+
+h2 {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 5em;
+  top: 350px;
+  position: absolute;
+  color: white;
+}
+
+.info {
+  background: white;
+  height: 80vh;
+  padding-bottom: 50px;
+
+  h3 {
+    font-size: 3em;
+  }
+  img {
+    margin: 0 auto;
+    width: 50px;
+    padding: 5px;
+  }
+  .cover {
+    margin: 0 auto;
+  }
+}
+
+.cocktail_category {
+
+  .row {
+    width: 50%;
+    padding-bottom: 100px;
+    div {
+      width: 100%;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    &:nth-child(odd) {
+      display: -webkit-box;
+      margin-bottom: 50px;
+
+    }
+
+    &:nth-child(even) {
+      display: -webkit-box;
+      flex-direction: row-reverse;
+      margin-bottom: 50px;
+    }
+
+    div {
+
+      img {
+        width: 40px;
+        padding: 5px;
+      }
+      h3 {
+        width: 50%;
+
+        &:before {
+          content: "";
+          width: 50%;
+          left: 30px;
+          position: absolute;
+          bottom: 0;
+          height: 50%;
+          background-color: $lightbrown;
+          z-index: -9;
+        }
+      }
+    }
+
+    img {
+      width: 80%;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+
+  .cocktail_category .row {
+
+    &:nth-child(even), &:nth-child(odd) {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}

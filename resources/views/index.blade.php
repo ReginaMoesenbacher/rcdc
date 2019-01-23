@@ -8,20 +8,20 @@
 
 
 
-    <section class="info">
+    <section class="info d-flex flex-column justify-content-center lign-items-center text-center">
         <h3>Mix your own Cocktail !</h3>
-        <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
+        <img class="text-center lign-items-center" src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
         <p>Log in, then you can start mixing your own individual Cocktail.<br/> Add all the ingredients and you'll see
             if you have the talent for a barkeeper.</p>
-        <p>Search for or favourite Cocktail !</p>
+        <p>Search for your favourite Cocktail !</p>
 
-        <section id="home" class="cover">
-            <form class="flex-form" method="GET" {{--action="{{ route('search') }}"--}}>
+        <section id="home" class="cover details-search">
+            <form class="flex-form" method="get" action="/search">
                 <label for="search">
                     <i class="ion-search"></i>
                 </label>
                 <input id="search"  type="search" placeholder="Find your favourite Cocktail" name="searchrterm">
-                <input type="submit" value="search">
+                <button type="submit"> Search </button>
             </form>
         </section>
 
@@ -38,13 +38,13 @@
                     <div class="row">
 
 
-                        <div data-aos="fade-right"
+                        <div class="d-flex flex-column text-center align-items-center justify-content-center" data-aos="fade-right"
                              data-aos-offset="300"
                              data-aos-easing="ease-in-sine">
-                            <h3>
+                            <h3 class="position-relative">
                                 <a href="{{ route("index", ["category" => $drink->slug]) }}">{{$drink->category_string}}</a>
                             </h3>
-                            <img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail">
+                            <a href="{{ route("index", ["category" => $drink->slug]) }}"><img src="{{ asset('images/cocktail.svg') }}" alt="Cocktail"></a>
                             <p>{{$img[$count]->category_desc}}</p>
                         </div>
 

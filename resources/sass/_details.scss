@@ -1,0 +1,178 @@
+
+/*----------------------------------------------*\
+                    Details
+\*----------------------------------------------*/
+aside{
+  z-index: 99;
+  //position: absolute;
+  top: 70px;
+  font-size: 1.3em;
+  padding: 40px 10px;
+}
+.container_cocktails {
+  padding-top: 70px;
+  margin-right: 70px;
+  width: 70%;
+
+  .grid {
+    figure {
+      overflow: hidden;
+      min-width: 320px;
+      max-width: 480px;
+      max-height: 360px;
+      width: 48%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    figure img {
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 0.8;
+    }
+
+    figure figcaption {
+      padding: 2em;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    figure figcaption::before,
+    figure figcaption::after {
+      pointer-events: none;
+    }
+
+    figure figcaption,
+    figure figcaption > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    figure figcaption h3 a {
+      color: $white;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 130px;
+      content: "";
+
+      &:focus {
+        outline: 0;
+      }
+
+    }
+
+  }
+
+}
+
+/*-----------------*/
+/***** Phoebe *****/
+/*-----------------*/
+
+figure.effect-phoebe {
+  background: $lila;
+}
+
+figure.effect-phoebe img {
+  opacity: 0.85;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.effect-phoebe:hover img {
+  opacity: 0.6;
+}
+
+figure.effect-phoebe figcaption:hover::before {
+  visibility: visible;
+}
+
+figure.effect-phoebe figcaption::before {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/triangle.svg") no-repeat center center;
+  background-size: 100% 100%;
+  content: '';
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale3d(5, 2.5, 1);
+  transform: scale3d(5, 2.5, 1);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+figure.effect-phoebe:hover figcaption::before {
+  opacity: 0.6;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+figure.effect-phoebe h3 {
+  margin-top: 1em;
+  -webkit-transition: transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+}
+
+figure.effect-phoebe:hover h3 {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+figure.effect-phoebe p a {
+  color: $white;
+  font-size: 140%;
+  opacity: 0;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-phoebe p a:first-child {
+  -webkit-transform: translate3d(-60px, -60px, 0);
+  transform: translate3d(-60px, -60px, 0);
+}
+
+figure.effect-phoebe p a:nth-child(2) {
+  -webkit-transform: translate3d(0, 60px, 0);
+  transform: translate3d(0, 60px, 0);
+}
+
+figure.effect-phoebe p a:nth-child(3) {
+  -webkit-transform: translate3d(60px, -60px, 0);
+  transform: translate3d(60px, -60px, 0);
+}
+
+figure.effect-phoebe:hover p a {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+@media screen and (max-width: 230px) {
+  .effect-phoebe {
+    &:hover {
+      display: none;
+    }
+    img {
+      width: 30%;
+      margin: 0 auto;
+    }
+  }
+}

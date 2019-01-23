@@ -60,3 +60,7 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+window.bodymovin = require('./bodymovin');
+window.lottie = require('./lottie');
+window.bodymovin = require('./bodymovin_light');

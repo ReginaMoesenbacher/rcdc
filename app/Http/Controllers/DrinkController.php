@@ -18,30 +18,25 @@ class DrinkController extends Controller
         $json = file_get_contents('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' . $urlParam);
         $drinks = json_decode($json, true);
         $drinks = $drinks["drinks"];
-
         $categories = CategorySlugRelation::all();
 
 // Pagenate Anzahl der Seiten
-        //This would contain all data to be sent to the view
+
         $data = array();
 
-        //Get current page form url e.g. &page=6
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
 
-        //Create a new Laravel collection from the array data
         $collection = new Collection($drinks);
 
-        //Define how many items we want to be visible in each page
-        $per_page = 9;
+        $per_page = 8;
 
-        //Slice the collection to get the items to display in current page
         $currentPageResults = $collection->slice(($currentPage-1) * $per_page, $per_page)->all();
 
-        //Create our paginator and add it to the data array
         $data['results'] = new LengthAwarePaginator($currentPageResults, count($collection), $per_page);
 
-        //Set base url for pagination links to follow e.g custom/url?page=6
         $data['results']->setPath($category);
+
+
 
         return view('cocktails.index', compact('categories', 'data'));
 //

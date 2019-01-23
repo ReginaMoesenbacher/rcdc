@@ -1,4 +1,4 @@
-<a href="{{ url('/') }}"><img src="../images/logo.svg" alt="Logo"></a>
+<a href="{{ url('/') }}"><img src="{{asset('images/logo.svg')}}" alt="Logo"></a>
 <a href="{{ url('/mixit') }}">Mixit</a>
 
 @auth
@@ -15,14 +15,14 @@
 
 @guest
 @else
-    <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+    <div class="nav-item dropdown">
+        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ Auth::user()->name }} <span class="caret"></span>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
             <a href="{{route("profile")}}" class="dropdown-item">Profile</a>
-            <a href="" class="dropdown-item">Shopping Cart</a>
+            <a href="{{route("cart.index")}}" class="dropdown-item">Shopping Cart</a>
             <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
@@ -34,5 +34,5 @@
                 @csrf
             </form>
         </div>
-    </li>
+    </div>
 @endguest

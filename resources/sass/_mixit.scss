@@ -1,0 +1,84 @@
+/*----------------------------------------------*\
+                    Mixit
+\*----------------------------------------------*/
+.sidebar {
+  z-index: 99;
+  background: $white;
+  transition: all .3s ease-out;
+  overflow: scroll;
+  top: 64px;
+  bottom: 0;
+  width: 300px;
+  border: 1px solid $purple;
+  height: 100vh;
+
+  form label {
+    //background-color: #281A24;
+    width: 100%;
+    padding: 15px;
+    color: $purple;
+    margin-bottom: 1px;
+    border-left: 10px solid transparent;
+  }
+
+}
+
+.mixit {
+  height: 110vh;
+  padding-top: 40px;
+
+  img {
+
+    padding-bottom: 10px;
+
+  }
+}
+
+.sidebar_cart {
+  background: $white;
+  width: 300px;
+  z-index: 99;
+  right: 0;
+  border: 1px solid $lightpurple;
+  border-radius: 2px;
+  height: 100vh;
+
+  img {
+    width: 15%;
+  }
+
+  button {
+    background: $purple;
+    color: $lightbrown;
+    margin-top: 50px;
+    padding: 10px 25px;
+    font-size: 1em;
+
+    &:hover {
+      background: $lightbrown;
+      color: $purple;
+    }
+  }
+
+  .cart_ingredients {
+    padding-top: 55px;
+    padding-left: 15px;
+
+    input {
+      border: none;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 850px) {
+.sidebar_cart{
+  img{
+    width: 10%;
+  }
+}
+  #bodymovin{
+    display: none;
+  }
+}

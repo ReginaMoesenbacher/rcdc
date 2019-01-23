@@ -29,10 +29,11 @@
 </head>
 <body>
 <div id="app">
-    <nav>
+    <nav class="position-fixed d-flex justify-content-center align-items-center">
         @include("partials.nav")
     </nav>
     <main>
+        @include("partials.alerts")
         @yield("content")
     </main>
 

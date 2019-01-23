@@ -1,0 +1,43 @@
+/*----------------------------------------------*\
+                   Shopping Cart
+\*----------------------------------------------*/
+.cart {
+  height: 100vh;
+
+  h3 {
+    padding-bottom: 10px;
+  }
+
+
+  .sidebar_cart_ingredient {
+
+    div {
+      padding-left: 0;
+
+      img {
+        width: 30px;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+    }
+    input {
+      border:none;
+    }
+
+  }
+
+  .mixit {
+    position: relative;
+
+    .row {
+      width: 70%;
+    }
+
+  }
+
+  .creditcart {
+    display: none;
+  }
+}
+

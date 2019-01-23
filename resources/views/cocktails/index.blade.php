@@ -4,7 +4,10 @@
 
 @section('content')
 
-    <aside class="sidebar">
+    <img class="nav__toggle" src="{{asset('images/right-arrow.png')}}" alt="Ingredients">
+    <div class="sidebar_cocktails position-fixed">
+    <aside class="sidebar position-absolute">
+        <img class="nav__toggle" src="{{asset('images/left-arrow.png')}}" alt="Zurück">
         <ul class="nav flex-column">
             @foreach($categories as $category)
                 <li class="nav-item">
@@ -14,40 +17,39 @@
             @endforeach
         </ul>
     </aside>
-
-    <section id="#home" class="cover">
-        <form class="flex-form">
+    </div>
+    <section class="cover details-search">
+        <form class="flex-form" method="get" action="/search">
             <label for="search">
                 <i class="ion-search"></i>
             </label>
-            <input id="search" type="search" placeholder="Find your favourite Cocktail">
-            <input type="submit" value="search">
+            <input id="search"  type="search" placeholder="Find your favourite Cocktail" name="searchrterm">
+            <button type="submit"> Search </button>
         </form>
     </section>
 
 
+    <section class="container container_cocktails">
 
-    <section class="container details mr-0">
-        <div class="row mt-5">
+        <div class="grid d-flex flex-wrap justify-content-between">
             @foreach ($data['results'] as $drink)
-                <div class="col-md-4">
-                    <div class="link-1 card mb-4 snip1556">
 
+                <figure class="effect-phoebe position-relative text-center">
+                    <img class="position-relative d-block" src="{{$drink["strDrinkThumb"]}}" alt="{{ $drink["strDrink"] }}"/>
+                    <figcaption>
+                        <h3>{{ $drink["strDrink"] }}</h3>
                         <form action="{{route("show", ["drink_id" => $drink["idDrink"]])}}" method="post">
-                            @csrf
-                            <input type="hidden" value="{{ $drink["idDrink"] }}">
-                            <button type="submit">{{ $drink["strDrink"] }}</button>
+                        @csrf
+                        <input type="hidden" value="{{ $drink["idDrink"] }}">
+                        <button class="position-relative" type="submit"></button>
                         </form>
+                    </figcaption>
+                </figure>
 
-                        <img src="{{$drink["strDrinkThumb"]}}" alt="{{ $drink["strDrink"] }}">
-                    </div>
+                @endforeach
 
-                </div>
-
-            @endforeach
-
-            {{--Show pagination links--}}
-            <span>{!! $data['results']->render() !!}</span>
+                {{--Show pagination links--}}
+                <span>{!! $data['results']->render() !!}</span>
         </div>
     </section>
 

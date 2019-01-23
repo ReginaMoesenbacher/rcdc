@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'zipcode' => ['required'],
             'state' => ['required'],
             'address' => ['required'],
+
         ]);
     }
 
@@ -79,5 +80,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
 
         ]);
+
+
     }
 }

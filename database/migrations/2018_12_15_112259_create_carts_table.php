@@ -18,6 +18,8 @@ class CreateCartsTable extends Migration
             $table->string('user_id');
             $table->text('ingredients_id');
             $table->string('uniq_id');
+            $table->text('card_brand');
+            $table->integer('card_last_four');
             $table->timestamps();
         });
     }
