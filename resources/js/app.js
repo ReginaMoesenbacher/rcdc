@@ -126,6 +126,7 @@ $('.currency').on('change', function () {
 //     path: '/images/animation/cocktail2.json',
 // };
 // let $anim = bodymovin.loadAnimation($animData);
+//
 
 
 
