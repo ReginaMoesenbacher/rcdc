@@ -117,15 +117,15 @@ $('.currency').on('change', function () {
 \*----------------------------------------------*/
 
 
-let $animData = {
-    wrapper: document.getElementById('bodymovin'),
-    render: 'svg',
-    loop: true,
-    prerender: true,
-    autoplay: true,
-    path: '/images/animation/cocktail2.json',
-};
-let $anim = bodymovin.loadAnimation($animData);
+// let $animData = {
+//     wrapper: document.getElementById('bodymovin'),
+//     render: 'svg',
+//     loop: true,
+//     prerender: true,
+//     autoplay: true,
+//     path: '/images/animation/cocktail2.json',
+// };
+// let $anim = bodymovin.loadAnimation($animData);
 
 
 
