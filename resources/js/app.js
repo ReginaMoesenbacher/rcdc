@@ -133,7 +133,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '/images/animation/data.json' // the path to the animation json
+    path: 'data.json' // the path to the animation json
 });
 
 
