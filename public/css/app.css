@@ -10945,6 +10945,7 @@ figure.effect-phoebe:hover p a {
 }
 
 .mixit {
+  z-index: -1;
   height: 110vh;
   padding-top: 40px;
 }

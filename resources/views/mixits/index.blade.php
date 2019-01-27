@@ -21,7 +21,7 @@
         </aside>
     </div>
     ¡
-    <div class="mixit d-flex justify-content-center align-items-center flex-column container" id="bodymovin">
+    <div class="mixit position-relative d-flex justify-content-center align-items-center flex-column container" id="bodymovin">
         {{--<img src="{{asset('images/animation/Cocktail.svg')}}" alt="">--}}
     </div>
 

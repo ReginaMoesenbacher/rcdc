@@ -136,7 +136,7 @@
 											<table width="184" border="0" cellpadding="0" cellspacing="0" align="left" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 												<tbody><tr>
 													<td width="100%" class="img184">
-														<a href="https://rcdc.at" style="text-decoration: none;">
+														<a href="{{ url('/') }}" style="text-decoration: none;">
 															<img src="{{ asset("images/logo.svg") }}" width="184" height="auto" style="width: 184px;" alt="" border="0" class="hover">
 														</a>
 													</td>
@@ -161,7 +161,7 @@
 													<td width="100%" style="font-size: 14px; color: #8d9499; text-align: left; font-family: Poppins, Arial, sans-serif, 'Poppins'; line-height: 26px; vertical-align: top; font-weight: 400;" class="fullCenter">
 														<style type="text/css">
 														p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Poppins Neue'; color: #262626}
-														p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Poppins Neue'; color: #262626; min-height: 16.0px}</style><p class="p1"><b>{{ $name }}</b> <em style="color: #8BAEB2;">submitted</em>Your first Cocktail</p><p class="p2"><br></p><p class="p2">{{ $name }} Your Cocktail is on the way :D</p>
+														p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Poppins Neue'; color: #262626; min-height: 16.0px}</style><p class="p1"><b>{{ $name }}</b> <em style="color: #281A24;">submitted</em><br>Your first Cocktail.</p><p class="p2"><br></p><p class="p2">{{ $name }} Your Cocktail is on the way :D</p>
 													</td>
 												</tr>
 												<tr>
@@ -174,7 +174,7 @@
 														<span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><table border="0" cellpadding="0" cellspacing="0" align="left" class="buttonScale">
 															<tbody><tr>
 																<td width="100%" align="center" height="38" bgcolor="#8BAEB2" style="border-radius: 5px; padding-left: 25px; padding-right: 25px; font-weight: 600; font-family: Poppins, Arial, sans-serif, 'Poppins'; color: #ffffff; font-size: 13px; background-color: #8baeb2;">
-																	<a target="_blank" href="https://rcdc.at" style="color: #ffffff; font-size: 13px; text-decoration: none; line-height: 13px; width: 100%;">Go Back to RCDC</a>
+																	<a target="_blank" href="{{ url('/') }}" style="color: #281A24; font-size: 13px; text-decoration: none; line-height: 13px; width: 100%;">Go Back to RCDC</a>
 																</td>
 															</tr>
 														</tbody></table></span></span></span></span></span>
@@ -216,7 +216,7 @@
 								<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 									<tbody><tr>
 										<td height="45" valign="middle" width="100%" align="center" class="logo84" style="text-align: center;">
-											<a href="https://newyearseve.ineffable.at" style="text-decoration: none;">
+											<a href="{{ url('/') }}" style="text-decoration: none;">
 												<img width="84" src="{{ asset("images/logo.svg") }}" alt="" border="0" class="">
 											</a>
 										</td>
@@ -235,7 +235,7 @@
 								<table width="100%" border="0" cellpadding="0" cellspacing="0" align="left" style="text-align: center;" class="fullCenter">
 									<tbody><tr>
 										<td width="100%" style="text-align: center; font-family: Poppins, Arial, sans-serif, 'Poppins'; font-size: 13px; color: #797A77; line-height: 26px; font-weight: 400;" class="fullCenter">
-											<strong><em><span style="font-size:16px;"><span style="font-family:Playfair Display !important; color:#3E484A;">Mösenbacher'</span></span></em></strong> • <a style="font-weight:500;border-bottom:1px solid #797A77" href="https://goo.gl/maps/Edokw975bjz" target="_blank">Hohenstaufengasse 6 • 1010 Vienna, Austria</a><br><a href="tel:+436765105269" style="border-bottom:1px solid #797A77; font-weight:500;">+43 664 453 505</a> • <a  target="_blank" href="https://rcdc.at" style="text-decoration: none; color: #bfbfbf;"><em><strong style="color: #797A77;"><span style="font-size: 16px; color: #bfbfbf;"><span style="font-family:Playfair Display !important; color:#3E484A;border-bottom:1px solid #171717;">rcdc.at</span></span></strong></em></a>
+											<strong><em><span style="font-size:16px;"><span style="font-family:Playfair Display !important; color:#3E484A;">Mösenbacher</span></span></em></strong> • <a style="font-weight:500;border-bottom:1px solid #797A77" href="https://goo.gl/maps/Edokw975bjz" target="_blank">Hohenstaufengasse 6 • 1010 Vienna, Austria</a><br><a href="tel:+436765105269" style="border-bottom:1px solid #797A77; font-weight:500;">+43 664 453 505</a> • <a  target="_blank" href="{{ url('/') }}" style="text-decoration: none; color: #bfbfbf;"><em><strong style="color: #797A77;"><span style="font-size: 16px; color: #bfbfbf;"><span style="font-family:Playfair Display !important; color:#3E484A;border-bottom:1px solid #171717;">http://rcdc.herokuapp.com</span></span></strong></em></a>
 										</td>
 									</tr>
 								</tbody></table>
@@ -289,7 +289,7 @@
 									</tr>
 									<tr>
 										<td width="100%" style="text-align: center; font-family: Poppins, Arial, sans-serif, 'Poppins'; font-size: 13px; color: #8d9499; font-weight: 400;" class="fullCenter">
-											© 2019 All rights Reserved - <em><strong><span style="font-size:16px;"><span style="font-family:Playfair Display !important;">Mösenbacher'</span></span></strong></em>
+											© 2019 All rights Reserved - <em><strong><span style="font-size:16px;"><span style="font-family:Playfair Display !important;">Mösenbacher</span></span></strong></em>
 										</td>
 									</tr>
 									<tr>
