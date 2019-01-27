@@ -173,8 +173,8 @@
 
 														<span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><span class="featuredHolder"><table border="0" cellpadding="0" cellspacing="0" align="left" class="buttonScale">
 															<tbody><tr>
-																<td width="100%" align="center" height="38" bgcolor="#8BAEB2" style="border-radius: 5px; padding-left: 25px; padding-right: 25px; font-weight: 600; font-family: Poppins, Arial, sans-serif, 'Poppins'; color: #ffffff; font-size: 13px; background-color: #8baeb2;">
-																	<a target="_blank" href="{{ url('/') }}" style="color: #281A24; font-size: 13px; text-decoration: none; line-height: 13px; width: 100%;">Go Back to RCDC</a>
+																<td width="100%" align="center" height="38" bgcolor="#F2DFCE" style="border-radius: 5px; padding-left: 25px; padding-right: 25px; font-weight: 600; font-family: Poppins, Arial, sans-serif, 'Poppins'; color: #ffffff; font-size: 13px; background-color: #8baeb2;">
+																	<a target="_blank" href="{{ url('/') }}" style="color: #F2DFCE; font-size: 13px; text-decoration: none; line-height: 13px; width: 100%;">Go Back to RCDC</a>
 																</td>
 															</tr>
 														</tbody></table></span></span></span></span></span>
@@ -277,7 +277,7 @@
 				</td>
 			</tr>
 		</tbody></table>
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#3E484A" style="background-color: #3e484a;">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#F2DFCE" style="background-color: #3e484a;">
 			<tbody><tr>
 				<td width="100%" valign="top">
 					<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
@@ -288,7 +288,7 @@
 										<td width="100%" height="25"></td>
 									</tr>
 									<tr>
-										<td width="100%" style="text-align: center; font-family: Poppins, Arial, sans-serif, 'Poppins'; font-size: 13px; color: #8d9499; font-weight: 400;" class="fullCenter">
+										<td width="100%" style="text-align: center; font-family: Poppins, Arial, sans-serif, 'Poppins'; font-size: 13px; color: #281A24; font-weight: 400;" class="fullCenter">
 											© 2019 All rights Reserved - <em><strong><span style="font-size:16px;"><span style="font-family:Playfair Display !important;">Mösenbacher</span></span></strong></em>
 										</td>
 									</tr>
