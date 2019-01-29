@@ -13921,9 +13921,9 @@ window.Vue = __webpack_require__(39);
 
 var $counter = 0;
 
-$('.text').on('change', function () {
+$('.ingredient_list').on('change', function () {
 
-    $checkBox = $(this).find('input');
+    var $checkBox = $(this).find('input');
     var $list_class = $(this).find('span').attr('class');
     var $list = $(this).find('span');
     var $cloneList = $list.clone();
@@ -13934,28 +13934,24 @@ $('.text').on('change', function () {
 
         if ($counter < 5) {
             $counter++;
-            $clonedList.length,
-            // console.log('added')
-            // console.log($liid);
-            $clonedList.append($('<input>').attr({
+            $clonedList.length, $clonedList.append($('<input>').attr({
                 class: $list_class,
                 name: $cloneList.text(),
                 value: $cloneList.text()
             }).appendTo($form));
-
-            console.log($cloneList.text());
         }
     } else if (!$checkBox.is(":checked")) {
+        console.log($list_class);
         $counter--;
         // console.log('unchecked');
         // console.log($liid);
-        $clonedList.find('span.' + $list_class).remove();
+        $clonedList.find("." + $list_class).remove();
     }
 
     if ($counter == 5) {
-        $('.text').find('input').not(':checked').attr("disabled", true);
+        $('.ingredient_list').find('input').not(':checked').attr("disabled", true);
     } else if ($counter < 5) {
-        $('.text').find('input').not(':checked').attr("disabled", false);
+        $('.ingredient_list').find('input').not(':checked').attr("disabled", false);
     }
 });
 
@@ -13984,38 +13980,60 @@ $('.currency').on('change', function () {
                      Animation
 \*----------------------------------------------*/
 
-// let $animData = {
-//     wrapper: document.getElementById('bodymovin'),
-//     render: 'svg',
-//     loop: true,
-//     prerender: true,
-//     autoplay: true,
-//     path: '/images/animation/cocktail2.json',
-// };
-// let $anim = bodymovin.loadAnimation($animData);
 //
+// if (document.getElementById('bodymovin')) {
+//     lottie.loadAnimation({
+//         container: document.getElementById('bodymovin'), // the dom element that will contain the animation
+//         renderer: 'svg',
+//         loop: true,
+//         autoplay: true,
+//         path: '/images/animation//data.json' // the path to the animation json
+//     });
+//
+// }
 
-lottie.loadAnimation({
-    container: document.getElementById('bodymovin'), // the dom element that will contain the animation
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: '/images/animation//data.json' // the path to the animation json
+var selected = [];
+var configObj = {
+    container: document.getElementById('bodymovin'),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "/images/animation/data.json"
+};
+
+var animation = lottie.loadAnimation(configObj);
+
+var addingridients = {
+    path: function path(id) {
+        var test = document.getElementById('bodymovin');
+        test.innerHTML = '';
+        configObj.path = "/images/animation/data" + id + ".json";
+        configObj.loop = true;
+        configObj.autoplay = true;
+        var animation = lottie.loadAnimation(configObj);
+    }
+};
+
+$('.ingredient_input').change(function () {
+
+    if ($(this).is(':checked')) {
+        selected.push($(this).val());
+    } else if (!$(this).is(':checked')) {
+        selected.splice($(this).val());
+    }
+
+    if (selected.length == 1) {
+        addingridients.path(1);
+    } else if (selected.length == 2) {
+        addingridients.path(2);
+    } else if (selected.length == 3) {
+        addingridients.path(3);
+    } else if (selected.length == 4) {
+        addingridients.path(4);
+    } else if (selected.length == 5) {
+        addingridients.path(5);
+    }
 });
-
-// let $animationData = {"v":"5.3.4","fr":25,"ip":0,"op":750,"w":1920,"h":1080,"nm":"Cocktail 2","ddd":0,"assets":[{"id":"image_0","w":260,"h":548,"u":"images/","p":"img_0.png","e":0},{"id":"image_1","w":280,"h":566,"u":"images/","p":"img_1.png","e":0},{"id":"image_2","w":314,"h":810,"u":"images/","p":"img_2.png","e":0},{"id":"image_3","w":1921,"h":1081,"u":"images/","p":"img_3.png","e":0}],"layers":[{"ddd":0,"ind":1,"ty":2,"nm":"Maske","refId":"image_0","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[960.715,473.951,0],"ix":2},"a":{"a":0,"k":[129.68,273.755,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"ip":0,"op":750,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":2,"nm":"Outline","refId":"image_1","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[960.715,473.951,0],"ix":2},"a":{"a":0,"k":[139.936,282.684,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"ip":0,"op":750,"st":0,"bm":0},{"ddd":0,"ind":3,"ty":2,"nm":"Cocktail","refId":"image_2","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[960.715,577.512,0],"ix":2},"a":{"a":0,"k":[156.637,404.738,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"ip":0,"op":750,"st":0,"bm":0},{"ddd":0,"ind":4,"ty":2,"nm":"Background","refId":"image_3","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[960,540,0],"ix":2},"a":{"a":0,"k":[960.25,540.25,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"ip":0,"op":750,"st":0,"bm":0}],"markers":[]}
-// let $container = document.getElementById('bodymovin');
-// // Set up our animation
-// let $animData = {
-//     container: $container,
-//     render: 'svg',
-//     loop: true,
-//     prerender: true,
-//     autoplay: true,
-//     animationData: $animationData
-// };
-//  $anim = bodymovin.loadAnimation($animData);
-//  $anim = bodymovin.play();
 
 /***/ }),
 /* 13 */

@@ -10923,6 +10923,10 @@ figure.effect-phoebe:hover p a {
                     Mixit
 \*----------------------------------------------*/
 
+#bodymovin {
+  background-color: #281A24;
+}
+
 .sidebar {
   z-index: 99;
   background: #ffffff;

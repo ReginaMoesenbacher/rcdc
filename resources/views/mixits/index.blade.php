@@ -11,8 +11,8 @@
                 <form method="post" class="squaredFour">
                     @csrf
                     @for ($i = 0; $i < count($ingredients['drinks']); $i++)
-                        <label class="text" for="ingredient-{{$i}}">
-                            <input type="checkbox" id="ingredient-{{$i}}" name="ingredient-{{$i}}">
+                        <label class="ingredient_list" for="ingredient-{{$i}}">
+                            <input type="checkbox" class="ingredient_input" id="ingredient-{{$i}}" name="ingredient-{{$i}}" value="{{ $i }}">
                             <span class="{{ $i }}">{{$ingredients['drinks'][$i]['strIngredient1']}}</span>
                         </label>
                     @endfor
