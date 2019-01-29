@@ -13993,26 +13993,27 @@ $('.currency').on('change', function () {
 // }
 
 var selected = [];
-var configObj = {
-    container: document.getElementById('bodymovin'),
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-    path: "/images/animation/data.json"
-};
+if (document.getElementById('bodymovin')) {
+    var configObj = {
+        container: document.getElementById('bodymovin'),
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "/images/animation/data.json"
+    };
 
-var animation = lottie.loadAnimation(configObj);
+    var animation = lottie.loadAnimation(configObj);
 
-var addingridients = {
-    path: function path(id) {
-        var test = document.getElementById('bodymovin');
-        test.innerHTML = '';
-        configObj.path = "/images/animation/data" + id + ".json";
-        configObj.loop = true;
-        configObj.autoplay = true;
-        var animation = lottie.loadAnimation(configObj);
-    }
-};
+    var _addingridients = {
+        path: function path(id) {
+            var test = document.getElementById('bodymovin');
+            test.innerHTML = '';
+            configObj.path = "/images/animation/data" + id + ".json";
+            configObj.autoplay = true;
+            var animation = lottie.loadAnimation(configObj);
+        }
+    };
+}
 
 $('.ingredient_input').change(function () {
 

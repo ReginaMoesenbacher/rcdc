@@ -44,6 +44,7 @@ $('.ingredient_list').on('change', function () {
     let $clonedList = $('.cart_ingredients');
     let $form = $('#buyMixit');
 
+
     if ($checkBox.is(":checked")) {
 
         if ($counter < 5) {
@@ -56,7 +57,6 @@ $('.ingredient_list').on('change', function () {
                         value: $cloneList.text(),
                     }).appendTo($form)
                 );
-
         }
 
     } else if (!($checkBox.is(":checked"))) {
@@ -122,6 +122,7 @@ $('.currency').on('change', function () {
 // }
 
 const selected = [];
+if (document.getElementById('bodymovin')) {
 let configObj = {
     container: document.getElementById('bodymovin'),
     renderer: "svg",
@@ -137,11 +138,11 @@ const addingridients = {
         const test = document.getElementById('bodymovin');
         test.innerHTML = '';
         configObj.path = "/images/animation/data"+ id+ ".json";
-        configObj.loop = true;
         configObj.autoplay = true;
         const animation = lottie.loadAnimation(configObj);
     }
 };
+}
 
 $('.ingredient_input').change(function () {
 
