@@ -14028,7 +14028,7 @@ $('.ingredient_input').change(function () {
     } else if (selected.length == 4) {
         addingridients.path(4);
     } else if (selected.length == 5) {
-        addingridients.path(8);
+        addingridients.path(5);
     }
 });
 
