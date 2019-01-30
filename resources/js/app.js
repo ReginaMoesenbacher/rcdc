@@ -62,9 +62,8 @@ $('.ingredient_list').on('change', function () {
     } else if (!($checkBox.is(":checked"))) {
         console.log($list_class);
         $counter--
-        // console.log('unchecked');
-        // console.log($liid);
         $clonedList.find("." + $list_class).remove();
+
 
     }
 
@@ -122,7 +121,6 @@ $('.currency').on('change', function () {
 // }
 
 const selected = [];
-if (document.getElementById('bodymovin')) {
 let configObj = {
     container: document.getElementById('bodymovin'),
     renderer: "svg",
@@ -142,7 +140,7 @@ const addingridients = {
         const animation = lottie.loadAnimation(configObj);
     }
 };
-}
+
 
 $('.ingredient_input').change(function () {
 

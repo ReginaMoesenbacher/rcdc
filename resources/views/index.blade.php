@@ -20,7 +20,7 @@
                 <label for="search">
                     <i class="ion-search"></i>
                 </label>
-                <input id="search"  type="search" placeholder="Find your favourite Cocktail" name="searchrterm">
+                <input id="search"  type="search" placeholder="Find your favourite Cocktail" name="searchterm" value="{{ old('searchterm') }}">
                 <button type="submit"> Search </button>
             </form>
         </section>
