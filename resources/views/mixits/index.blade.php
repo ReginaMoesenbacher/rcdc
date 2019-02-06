@@ -26,7 +26,7 @@
     </div>
 
 
-    <aside class="sidebar_cart position-absolute text-center">
+    <aside class="sidebar_cart position-fixed text-center">
         <img class="nav__toggle" src="{{asset('images/right-arrow.png')}}" alt="Ingredients">
         <h3>Let's start and mix your own Cocktail! </h3>
         <div>

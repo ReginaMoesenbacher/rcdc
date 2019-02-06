@@ -26,7 +26,8 @@
 
 
                             <td>{{($order->user->name)}}</td>
-                            <td> @foreach ($ingredients as $ingredient)
+                            <td>
+                                @foreach ($ingredients as $ingredient)
                                     <ul>
                                         <li>{{$ingredient}}</li>
                                     </ul>

@@ -70,11 +70,7 @@ class AdminController extends Controller
         $orders = Cart::all()->load('user');
 
 
-        $ingredients = (json_decode($orders[0]->ingredients));
-
-
-
-
+       $ingredients = (json_decode($orders[0]->ingredients));
 
         return view('backend.order', compact('orders', 'ingredients'));
 
@@ -86,7 +82,7 @@ class AdminController extends Controller
         $orders = Cart::findOrFail($id)->load('user');
         $ingredients = (json_decode($orders->ingredients));
 
-        return view('backend.show_order', ['order' => $orders], ['ingredients' => $ingredients]);
+        return view('backend.show_order', compact('orders', 'ingredients'));
     }
 
 
@@ -99,6 +95,7 @@ class AdminController extends Controller
 
         $orders = Cart::findOrFail($id);
         $orders->fill($request->all());
+        $orders->ingredients = json_encode($orders->ingredients);
         $orders->save();
 
         return redirect('/admin/orders')->with('info', 'Order updated');

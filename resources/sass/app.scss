@@ -74,6 +74,15 @@ body {
   .sidebar_cocktails{
     z-index: 100;
   }
+
+  //.toggle__button {
+  //  width: 150px;
+  //  background: $purple;
+  //  color: $lightbrown;
+  //  top: 170px;
+  //  margin: 20px;
+  //}
+
   .sidebar {
     left: 0;
     top: 170px;
@@ -96,7 +105,7 @@ body {
   .nav__toggle {
     display: block;
     position: absolute;
-    top: 30%;
+    top: 160px;
     left: 3%;
     cursor: pointer;
   }

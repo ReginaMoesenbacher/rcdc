@@ -39,7 +39,7 @@
                             <td>
 
                                 {{--<a href="{{ route('admin.edit_costumer', $user->id) }}" class="btn btn-info">Edit </a>--}}
-                                <formA method="get" action="{{ route('admin.edit_costumer', $user->id) }}"
+                                <form method="get" action="{{ route('admin.edit_costumer', $user->id) }}"
                                       autocomplete="off">
 
                                     @csrf
@@ -47,7 +47,7 @@
 
                                     <button type="submit" class="btn btn-info">Edit</button>
 
-                                </formA>
+                                </form>
                             </td>
                             <td>
                                 <form method="post" action="{{ route('admin.destroy_costumer', $user->id) }}">

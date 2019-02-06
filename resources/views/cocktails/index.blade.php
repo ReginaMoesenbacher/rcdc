@@ -5,6 +5,9 @@
 @section('content')
 
     <img class="nav__toggle" src="{{asset('images/right-arrow.png')}}" alt="Ingredients">
+    {{--<button class="nav__toggle toggle__button" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+        {{--Cocktail Categories--}}
+    {{--</button>--}}
     <div class="sidebar_cocktails position-fixed">
     <aside class="sidebar position-absolute">
         <img class="nav__toggle" src="{{asset('images/left-arrow.png')}}" alt="Zurück">

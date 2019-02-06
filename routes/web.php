@@ -18,6 +18,7 @@ Route::get('/home', ["uses" => "RootController@index", "as" => "home"]);
 Route::get('/privacy_policy', function () {
     return view('policy');
 });
+
 Route::middleware('auth')->group(function() {
 
     Route::get('/profile', ["uses" => "HomeController@edit", "as" => "profile"]);
