@@ -22,7 +22,7 @@
                     <div class="form-group">
 
                         <label for="ingredients">Ingredients</label>
-                        <input type="text" class="form-control" id="ingredients" value="{{$ingredients}}" name="ingredients">
+                        <input type="text" class="form-control" id="ingredients" value="{{$orders->ingredients}}" name="ingredients">
 
                     </div>
 
