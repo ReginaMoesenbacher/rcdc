@@ -25,46 +25,36 @@
 
                     @for($i = 0; $i < count($orders); $i++)
 
+                        <tr>
 
+                            <td>{{($orders[$i]->user->name)}}</td>
+                            <td>
+                                <ul>
+                                    <li>{{$orders[$i]->ingredients}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <form method="get" action="{{ route('admin.edit_order', $orders[$i]->id) }}"
+                                      autocomplete="off">
 
+                                    @csrf
+                                    @method('put')
 
-                        {{--@foreach($orders[$i] as $order)--}}
-                            <tr>
+                                    <button type="submit" class="btn btn-info">Edit</button>
 
+                                </form>
+                            </td>
+                            <td>
+                                <form method="post" action="{{ route('admin.destroy_order', $orders[$i]->id) }}">
 
-                                {{--{{ ($orders[$i]->ingredients) }}--}}
+                                    @csrf
+                                    @method('delete')
 
+                                    <button type="submit" class="btn btn-danger">Delete</button>
 
-                                <td>{{($orders[$i]->user->name)}}</td>
-                                <td>
-                                    {{--@foreach ($ingredients as $ingredient)--}}
-                                        <ul>
-                                            <li>{{$orders[$i]->ingredients}}</li>
-                                        </ul>
-                                    {{--@endforeach--}}
-                                </td>
-                                <td>
-                                    <form method="get" action="{{ route('admin.edit_order', $orders[$i]->id) }}"
-                                          autocomplete="off">
-
-                                        @csrf
-                                        @method('put')
-
-                                        <button type="submit" class="btn btn-info">Edit</button>
-
-                                    </form>
-                                </td>
-                                <td>
-                                    <form method="post" action="{{ route('admin.destroy_order', $orders[$i]->id) }}">
-
-                                        @csrf
-                                        @method('delete')
-
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-
-                                    </form>
-                                </td>
-                            </tr>
+                                </form>
+                            </td>
+                        </tr>
                         {{--@endforeach--}}
 
                     @endfor

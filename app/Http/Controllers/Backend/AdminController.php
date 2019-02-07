@@ -13,11 +13,6 @@ class AdminController extends Controller
     public function costumer()
     {
 
-        //        $currentPage = 1
-//        Paginator::currentPageResolver(function () use ($currentPage) {
-//            return $currentPage;
-//        });
-
         $users = User::where('role', null)->get();
 
 
