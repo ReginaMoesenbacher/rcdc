@@ -8,20 +8,21 @@
 
             <div class="container backend_container">
 
-                <form action="{{route('admin.update_order', $order->id)}}" method="post">
+                <form action="{{route('admin.update_order', $orders->id)}}" method="post">
+
 
                     @csrf
                     <div class="form-group">
 
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" value="{{ $order->user->name}}" name="name">
+                        <input type="text" class="form-control" id="name" value="{{ $orders->user->name}}" name="name">
 
                     </div>
 
                     <div class="form-group">
 
                         <label for="ingredients">Ingredients</label>
-                        <input type="text" class="form-control" id="ingredients" value="@foreach ($ingredients as $ingredient) {{str_replace(" ", $ingredient,  ", " )}}@endforeach" name="ingredients">
+                        <input type="text" class="form-control" id="ingredients" value="{{$ingredients}}" name="ingredients">
 
                     </div>
 

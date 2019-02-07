@@ -21,42 +21,53 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($orders as $order)
-                        <tr>
 
 
-                            <td>{{($order->user->name)}}</td>
-                            <td>
-                                @foreach ($ingredients as $ingredient)
-                                    <ul>
-                                        <li>{{$ingredient}}</li>
-                                    </ul>
-                                @endforeach
-                            </td>
-                            <td>
-                                <form method="get" action="{{ route('admin.edit_order', $order->id) }}"
-                                      autocomplete="off">
+                    @for($i = 0; $i < count($orders); $i++)
 
-                                    @csrf
-                                    @method('put')
 
-                                    <button type="submit" class="btn btn-info">Edit</button>
 
-                                </form>
-                            </td>
-                            <td>
-                                <form method="post" action="{{ route('admin.destroy_order', $order->id) }}">
 
-                                    @csrf
-                                    @method('delete')
+                        {{--@foreach($orders[$i] as $order)--}}
+                            <tr>
 
-                                    <button type="submit" class="btn btn-danger">Delete</button>
 
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
+                                {{--{{ ($orders[$i]->ingredients) }}--}}
 
+
+                                <td>{{($orders[$i]->user->name)}}</td>
+                                <td>
+                                    {{--@foreach ($ingredients as $ingredient)--}}
+                                        <ul>
+                                            <li>{{$orders[$i]->ingredients}}</li>
+                                        </ul>
+                                    {{--@endforeach--}}
+                                </td>
+                                <td>
+                                    <form method="get" action="{{ route('admin.edit_order', $orders[$i]->id) }}"
+                                          autocomplete="off">
+
+                                        @csrf
+                                        @method('put')
+
+                                        <button type="submit" class="btn btn-info">Edit</button>
+
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method="post" action="{{ route('admin.destroy_order', $orders[$i]->id) }}">
+
+                                        @csrf
+                                        @method('delete')
+
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                                    </form>
+                                </td>
+                            </tr>
+                        {{--@endforeach--}}
+
+                    @endfor
                     </tbody>
                 </table>
             </div>
